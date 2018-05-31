@@ -1,0 +1,23 @@
+server:
+      port: 8081
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        druid:
+           first:  #数据源1
+              url: jdbc:mysql://db-server:3306/test?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+              username: fcbss
+              password: Fcbss@123
+           second:  #数据源2
+              url: jdbc:mysql://db-server:3306/fincmp_md?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+              username: fcbss
+              password: Fcbss@123
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.taotao.dao.entity
+  global-config:
+            #驼峰下划线转换
+            db-column-underline: true
